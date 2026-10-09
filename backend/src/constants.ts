@@ -6,10 +6,9 @@ const isProd = env.NODE_ENV === 'production';
 export const COOKIE_OPTIONS: CookieOptions = {
   httpOnly: true,
   secure: isProd,
-  sameSite: isProd ? 'none' : 'lax',
-  maxAge: +env.REFRESH_COOKIE_MAX_AGE,
+  sameSite: 'lax',
   path: '/',
-  domain: undefined,
+  maxAge: +env.REFRESH_COOKIE_MAX_AGE,
 };
 
 export const RESEND_COOLDOWN_SECONDS = 60;
